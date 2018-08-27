@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>[ Implade Tools ]</title>
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" charset = "UTF-8">
+		
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/eligrey/Blob.js/079824b6/Blob.js"></script>
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/eligrey/FileSaver.js/c3e4a450/FileSaver.min.js"></script>
+		
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/h2non/jshashes/88625b6c/hashes.min.js"></script>
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/imaya/zlib.js/27015212/bin/rawdeflate.min.js"></script>
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/imaya/zlib.js/27015212/bin/rawinflate.dev.min.js"></script>
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/imaya/zlib.js/27015212/bin/zip.min.js"></script>
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/imaya/zlib.js/27015212/bin/unzip.min.js"></script>
+		
+		<script type = "text/javascript" src = "https://cdn.rawgit.com/FaigerSYS/PharUtils.js/19d16ded/lib/pharutils.min.js"></script>
+		
+		<script type = "text/javascript" src = "tools.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+		<link rel = "stylesheet" type = "text/css" href = "tools.css">
+	</head>
+	
+	<body class = "disable-select" link="#00b2b2" vlink="#00b2b2" alink="#ae8913" >
+		<h1>[ Implade Tools ]</h1>
+		
+		<hr align = "center" width = "100%" size = "2" color = "#8392d9" />
+		<br><br>
+
+		<div id = "upload" class = "upload" style = "display: none">
+                        Convert your <b>Pocketmine plugin</b> to <b>ZIP</b> or <b>PHAR</b> file! <br>It's simple and fast!<br><br>Github: ZIP and PHAR are supported! ✔<br>Poggit: PHAR not supported! ❌<br>
+			<br><br>
+			<label class = "file-upload-label">
+				<input type = "file" id = "upload.image" onChange = "processFile(this)" />
+				Choose Plugin File
+			</label>
+		</div>
+		
+		<br>
+		
+		<div id = "converting" style = "display: none">
+			Please wait!<br>Your plugin file is converting...
+		</div>
+		
+		<div id = "converted" class = "convert-success" style = "display: none">
+			Successfully converted your plugin file!<br>Starting quick download...
+		</div>
+		
+		<div class = "error">
+			<br><br>
+			<noscript>JavaScript is not enabled!</noscript>
+			<div id = "error.corrupted" style = "display: none">
+				We've detected that your file is corrupted! It must be from Poggit Source right?
+			</div>
+			<div id = "error.file-format" style = "display: none">
+				You chosen a invalid file. The valid format must be <b>PHAR</b> or <b>ZIP</b>
+			</div>
+			<div id = "error.reading" style = "display: none">
+				There was a error occured while reading because this is not Pocketmine plugin with <b>PHAR</b> or <b>ZIP</b> file!
+			</div>
+			<br>
+		</div>
+	</body>
+</html>
